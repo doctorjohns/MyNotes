@@ -21,7 +21,7 @@ import org.jetbrains.annotations.Nullable;
 public class NotesFragment extends Fragment {
 
     public static final String CURRENT_NOTE = "CurrentNote";
-    private int currentPosition = 0;
+    private Note currentNote;
     private boolean isLandscape;
 
     @Override
@@ -46,14 +46,14 @@ public class NotesFragment extends Fragment {
             layoutView.addView(tv);
             final int fi = i;
             tv.setOnClickListener(v -> {
-                currentPosition = fi;
-                showNote(currentPosition);
+                currentNote = new Note(fi, getResources().getStringArray(R.array.notes)[fi]);
+                showNoteContent(currentNote);
             });
         }
     }
     @Override
     public void onSaveInstanceState (@NotNull Bundle outstate) {
-        outstate.putInt(CURRENT_NOTE, currentPosition);
+        outstate.putParcelable(CURRENT_NOTE, currentNote);
         super.onSaveInstanceState(outstate);
     }
 
@@ -64,24 +64,26 @@ public class NotesFragment extends Fragment {
                 == Configuration.ORIENTATION_LANDSCAPE;
 
         if (savedInstanceState != null) {
-            currentPosition = savedInstanceState.getInt(CURRENT_NOTE,0);
-        }
-
-        if (isLandscape) {
-            showLandNoteContent(0);
-        }
-    }
-
-    private void showNote(int index) {
-        if (isLandscape) {
-            showLandNoteContent(index);
+            currentNote = savedInstanceState.getParcelable(CURRENT_NOTE);
         } else {
-            showNoteContent(index);
+            currentNote = new Note(0,getResources().getStringArray(R.array.notes)[0]);
+        }
+
+        if (isLandscape) {
+            showLandNoteContent(currentNote);
         }
     }
 
-    private void showLandNoteContent(int index) {
-        NoteContentFragment detail = NoteContentFragment.newInstance(index);
+    private void showNote(Note currentNote) {
+        if (isLandscape) {
+            showLandNoteContent(currentNote);
+        } else {
+            showNoteContent(currentNote);
+        }
+    }
+
+    private void showLandNoteContent(Note currentNote) {
+        NoteContentFragment detail = NoteContentFragment.newInstance(currentNote);
 
         FragmentManager fragmentManager = requireActivity().getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -90,10 +92,10 @@ public class NotesFragment extends Fragment {
         fragmentTransaction.commit();
     }
 
-    private void showNoteContent(int index) {
+    private void showNoteContent(Note currentNote) {
         Intent intent = new Intent();
         intent.setClass(getActivity(), NoteContentActivity.class);
-        intent.putExtra(NoteContentFragment.ARG_INDEX, index);
+        intent.putExtra(NoteContentFragment.ARG_NOTE, currentNote);
         startActivity(intent);
     }
 }

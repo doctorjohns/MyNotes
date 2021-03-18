@@ -14,13 +14,13 @@ import android.widget.TextView;
 
 public class NoteContentFragment extends Fragment {
 
-    public static final  String ARG_INDEX = "index";
-    private int index;
+    public static final  String ARG_NOTE = "note";
+    private Note note;
 
-    public static NoteContentFragment newInstance (int index) {
+    public static NoteContentFragment newInstance (Note note) {
         NoteContentFragment n = new NoteContentFragment();
         Bundle args = new Bundle();
-        args.putInt(ARG_INDEX,index);
+        args.putParcelable(ARG_NOTE,note);
         n.setArguments(args);
         return n;
     }
@@ -28,21 +28,20 @@ public class NoteContentFragment extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            index = getArguments().getInt(ARG_INDEX);
+            note = getArguments().getParcelable(ARG_NOTE);
         }
     }
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-
-
-
-
         View view = inflater.inflate(R.layout.fragment_note_content, container,false);
         TextView textNote = view.findViewById(R.id.contentNote);
         TypedArray noteContentArray = getResources().obtainTypedArray(R.array.noteContent);
+        TypedArray noteNameArray = getResources().obtainTypedArray(R.array.notes);
 
-        textNote.setText(noteContentArray.getText(index));
+        TextView noteNameView = view.findViewById(R.id.noteName);
+        noteNameView.setText(noteNameArray.getText(note.getNoteIndex()));
+        textNote.setText(noteContentArray.getText(note.getNoteIndex()));
         return view;
     }
 }
