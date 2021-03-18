@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="notes">
+        <item>Notes 1</item>
+        <item>Notes 2</item>
+        <item>Notes 3</item>
+        <item>Notes 4</item>
+
+    </string-array>
+    <string-array name="noteContent">
+        <item>1orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et sapien lobortis, tempor neque at, aliquet urna. Vestibulum dictum tempor ligula, at aliquet ligula aliquam ac. Etiam viverra pulvinar massa, maximus rutrum augue hendrerit sit amet. Fusce et quam mattis, ornare metus id, eleifend mauris. Vestibulum ultricies enim a erat consectetur vestibulum. Proin ultricies, libero sed tristique pharetra, sapien mi sodales diam, a porta purus nisl at arcu. Curabitur aliquam lacus quis tortor vestibulum, quis commodo risus dignissim. Sed faucibus turpis vitae ligula malesuada, in lacinia risus interdum.</item>
+        <item>2orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et sapien lobortis, tempor neque at, aliquet urna. Vestibulum dictum tempor ligula, at aliquet ligula aliquam ac. Etiam viverra pulvinar massa, maximus rutrum augue hendrerit sit amet. Fusce et quam mattis, ornare metus id, eleifend mauris. Vestibulum ultricies enim a erat consectetur vestibulum. Proin ultricies, libero sed tristique pharetra, sapien mi sodales diam, a porta purus nisl at arcu. Curabitur aliquam lacus quis tortor vestibulum, quis commodo risus dignissim. Sed faucibus turpis vitae ligula malesuada, in lacinia risus interdum.</item>
+        <item>3orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et sapien lobortis, tempor neque at, aliquet urna. Vestibulum dictum tempor ligula, at aliquet ligula aliquam ac. Etiam viverra pulvinar massa, maximus rutrum augue hendrerit sit amet. Fusce et quam mattis, ornare metus id, eleifend mauris. Vestibulum ultricies enim a erat consectetur vestibulum. Proin ultricies, libero sed tristique pharetra, sapien mi sodales diam, a porta purus nisl at arcu. Curabitur aliquam lacus quis tortor vestibulum, quis commodo risus dignissim. Sed faucibus turpis vitae ligula malesuada, in lacinia risus interdum.</item>
+        <item>4orem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse et sapien lobortis, tempor neque at, aliquet urna. Vestibulum dictum tempor ligula, at aliquet ligula aliquam ac. Etiam viverra pulvinar massa, maximus rutrum augue hendrerit sit amet. Fusce et quam mattis, ornare metus id, eleifend mauris. Vestibulum ultricies enim a erat consectetur vestibulum. Proin ultricies, libero sed tristique pharetra, sapien mi sodales diam, a porta purus nisl at arcu. Curabitur aliquam lacus quis tortor vestibulum, quis commodo risus dignissim. Sed faucibus turpis vitae ligula malesuada, in lacinia risus interdum.</item>
+    </string-array>
+</resources>
