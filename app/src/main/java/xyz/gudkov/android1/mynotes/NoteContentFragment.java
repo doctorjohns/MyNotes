@@ -3,10 +3,14 @@ package xyz.gudkov.android1.mynotes;
 import android.content.res.TypedArray;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
@@ -42,6 +46,15 @@ public class NoteContentFragment extends Fragment {
         TextView noteNameView = view.findViewById(R.id.noteName);
         noteNameView.setText(noteNameArray.getText(note.getNoteIndex()));
         textNote.setText(noteContentArray.getText(note.getNoteIndex()));
+
+        setHasOptionsMenu(true);
+
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.note_menu, menu);
     }
 }
