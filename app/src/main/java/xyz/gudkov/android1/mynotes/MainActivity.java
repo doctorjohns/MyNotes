@@ -31,11 +31,11 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
             case R.id.toolbar_menu_item1: {
-                Toast.makeText(this, "Настройки", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "О программе", Toast.LENGTH_SHORT).show();
                 return true;
             }
             case R.id.toolbar_menu_item2: {
-                Toast.makeText(this,"О программе",Toast.LENGTH_SHORT).show();
+                Toast.makeText(this,"Настройки",Toast.LENGTH_SHORT).show();
             }
         }
         return super.onOptionsItemSelected(item);
